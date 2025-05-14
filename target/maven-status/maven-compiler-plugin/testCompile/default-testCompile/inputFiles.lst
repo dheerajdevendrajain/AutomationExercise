@@ -1,0 +1,15 @@
+D:\workspace\AutomationExercise\src\test\java\helpers\ActionHelper.java
+D:\workspace\AutomationExercise\src\test\java\pages\AccountCreationPage.java
+D:\workspace\AutomationExercise\src\test\java\pages\AccountHomePage.java
+D:\workspace\AutomationExercise\src\test\java\pages\HomePage.java
+D:\workspace\AutomationExercise\src\test\java\pages\LoginPage.java
+D:\workspace\AutomationExercise\src\test\java\pages\pageBucket.java
+D:\workspace\AutomationExercise\src\test\java\pages\SignupPage.java
+D:\workspace\AutomationExercise\src\test\java\runners\testRunner.java
+D:\workspace\AutomationExercise\src\test\java\setup\DriverManager.java
+D:\workspace\AutomationExercise\src\test\java\stepDefinitions\AccountCreationSteps.java
+D:\workspace\AutomationExercise\src\test\java\stepDefinitions\AccountHomePageSteps.java
+D:\workspace\AutomationExercise\src\test\java\stepDefinitions\HomePageSteps.java
+D:\workspace\AutomationExercise\src\test\java\stepDefinitions\Hooks.java
+D:\workspace\AutomationExercise\src\test\java\stepDefinitions\LoginPageSteps.java
+D:\workspace\AutomationExercise\src\test\java\utilities\ConfigurationReader.java

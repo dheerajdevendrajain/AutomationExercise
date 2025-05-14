@@ -1,0 +1,208 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2025-05-14T16:26:01.303Z",
+        "before": [
+          {
+            "result": {
+              "duration": 13140318200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 58,
+        "name": "Logout user positive scenario",
+        "description": "",
+        "id": "register-user-on-automation-exercise;logout-user-positive-scenario;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 200860800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 45010700,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "Verify that home page is visible successfully",
+            "match": {
+              "location": "stepDefinitions.HomePageSteps.verifyThatHomePageIsVisibleSuccessfully()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1276540500,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "Click on \u0027Signup / Login\u0027 button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027Signup / Login\u0027",
+                  "offset": 9
+                }
+              ],
+              "location": "stepDefinitions.HomePageSteps.clickOnSignupLoginButton(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 66887300,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "Verify \u0027Login to your account\u0027 is visible on login page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027Login to your account\u0027",
+                  "offset": 7
+                }
+              ],
+              "location": "stepDefinitions.LoginPageSteps.verifyLoginToYourAccountIsVisibleOnLoginPage(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 545768400,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "Enter email address \u0027abc@ghj.mm\u0027 and password \u0027Test@1234\u0027 on login page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027abc@ghj.mm\u0027",
+                  "offset": 20
+                },
+                {
+                  "val": "\u0027Test@1234\u0027",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.LoginPageSteps.enterEmailAddressEmailAndPasswordPasswordOnLoginPage(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 102339200,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "Click \u0027login\u0027 button on login button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027login\u0027",
+                  "offset": 6
+                }
+              ],
+              "location": "stepDefinitions.LoginPageSteps.clickLoginButtonOnLoginButton(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4405944000,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "Verify that \u0027Logged in as Dheeraj\u0027 is visible on account page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027Logged in as Dheeraj\u0027",
+                  "offset": 12
+                }
+              ],
+              "location": "stepDefinitions.AccountHomePageSteps.verifyThatLoggedInAsUsernameIsVisibleOnAccountPage(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1169779500,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "Click \u0027Logout\u0027 button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027Logout\u0027",
+                  "offset": 6
+                }
+              ],
+              "location": "stepDefinitions.AccountHomePageSteps.clickLogoutButton(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 48642100,
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "Verify \u0027Login to your account\u0027 is visible on login page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027Login to your account\u0027",
+                  "offset": 7
+                }
+              ],
+              "location": "stepDefinitions.LoginPageSteps.verifyLoginToYourAccountIsVisibleOnLoginPage(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@TestFeature"
+          },
+          {
+            "name": "@LogoutUser"
+          },
+          {
+            "name": "@smokeTest"
+          }
+        ]
+      }
+    ],
+    "name": "Register user on automation exercise",
+    "description": "",
+    "id": "register-user-on-automation-exercise",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/RegisterUser.feature",
+    "tags": [
+      {
+        "name": "@TestFeature",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

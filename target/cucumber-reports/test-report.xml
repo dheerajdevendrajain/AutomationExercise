@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="21.372">
+    <testcase classname="Register user on automation exercise" name="Logout user positive scenario" time="21.011">
+        <system-out><![CDATA[Then Verify that home page is visible successfully..........................passed
+And Click on 'Signup / Login' button........................................passed
+Then Verify 'Login to your account' is visible on login page................passed
+Then Enter email address 'abc@ghj.mm' and password 'Test@1234' on login page.passed
+Then Click 'login' button on login button...................................passed
+And Verify that 'Logged in as Dheeraj' is visible on account page...........passed
+And Click 'Logout' button...................................................passed
+Then Verify 'Login to your account' is visible on login page................passed
+]]></system-out>
+    </testcase>
+</testsuite>

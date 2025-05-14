@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>AutomationExercise</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>AutomationExercise</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>11</maven.compiler.release>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <aspectj.version>1.9.19</aspectj.version>
+        <selenium-version>4.29.0</selenium-version>
+        <testng-version>7.7.1</testng-version>
+        <ashot-version>1.5.4</ashot-version>
+        <allure-testng-version>2.21.0</allure-testng-version>
+        <log4j-version>2.20.0</log4j-version>
+        <!--        <extentreports-version>5.0.9</extentreports-version>-->
+        <maven-surefire-plugin-version>3.5.2</maven-surefire-plugin-version>
+        <slf4j-version>2.0.7</slf4j-version>
+        <cucumber-version>7.11.0</cucumber-version>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>5.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>5.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>5.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>5.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>5.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>5.1.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <!--            <scope>test</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+            <!--            <scope>test</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>3.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.17</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.24.3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.5.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>0.10.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.aeonbits.owner</groupId>
+            <artifactId>owner</artifactId>
+            <version>1.0.12</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.12.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.3</version>
+                <configuration>
+                    <properties>
+                        <property>
+                            <name>testng</name>
+                            <value>false</value>
+                        </property>
+                    </properties>
+                    <parallel>methods</parallel>
+                    <threadCount>4</threadCount>
+                    <perCoreThreadCount>false</perCoreThreadCount>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <includes>
+                        <include>**/*testRunner.java</include>
+                    </includes>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit47</artifactId>
+                        <version>3.5.3</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>5.5.0</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>AutomationExercise</projectName>
+                            <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+                            <inputDirectory>${project.build.directory}/cucumber-reports</inputDirectory>
+                            <jsonFiles>
+                                <param>**/*test-report.json</param>
+                            </jsonFiles>
+                            <buildNumber>New Build</buildNumber>
+                            <checkBuildResult>true</checkBuildResult>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+        <!--        <dependency>-->
+        <!--            <groupId>org.junit</groupId>-->
+        <!--            <artifactId>junit-bom</artifactId>-->
+        <!--            <version>5.9.1</version>-->
+        <!--            <type>pom</type>-->
+        <!--            <scope>import</scope>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.junit.jupiter</groupId>-->
+        <!--            <artifactId>junit-jupiter</artifactId>-->
+        <!--            <version>5.9.1</version>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.seleniumhq.selenium</groupId>-->
+        <!--            <artifactId>selenium-java</artifactId>-->
+        <!--            <version>${selenium-version}</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.testng</groupId>-->
+        <!--            <artifactId>testng</artifactId>-->
+        <!--            <version>7.11.0</version>-->
+        <!--            &lt;!&ndash;            <scope>test</scope>&ndash;&gt;-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.cucumber</groupId>-->
+        <!--            <artifactId>cucumber-testng</artifactId>-->
+        <!--            <version>${cucumber-version}</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>ru.yandex.qatools.ashot</groupId>-->
+        <!--            <artifactId>ashot</artifactId>-->
+        <!--            <version>${ashot-version}</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.qameta.allure</groupId>-->
+        <!--            <artifactId>allure-testng</artifactId>-->
+        <!--            <version>${allure-testng-version}</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.logging.log4j</groupId>-->
+        <!--            <artifactId>log4j-core</artifactId>-->
+        <!--            <version>${log4j-version}</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.slf4j</groupId>-->
+        <!--            <artifactId>slf4j-api</artifactId>-->
+        <!--            <version>${slf4j-version}</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.slf4j</groupId>-->
+        <!--            <artifactId>slf4j-simple</artifactId>-->
+        <!--            <version>${slf4j-version}</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash;            <dependency>&ndash;&gt;-->
+        <!--        &lt;!&ndash;                <groupId>com.aventstack</groupId>&ndash;&gt;-->
+        <!--        &lt;!&ndash;                <artifactId>extentreports</artifactId>&ndash;&gt;-->
+        <!--        &lt;!&ndash;                <version>${extentreports-version}</version>&ndash;&gt;-->
+        <!--        &lt;!&ndash;            </dependency>&ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>commons-io</groupId>-->
+        <!--            <artifactId>commons-io</artifactId>-->
+        <!--            <version>2.11.0</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.logging.log4j</groupId>-->
+        <!--            <artifactId>log4j-api</artifactId>-->
+        <!--            <version>2.20.0</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.poi</groupId>-->
+        <!--            <artifactId>poi</artifactId>-->
+        <!--            <version>5.2.3</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.poi</groupId>-->
+        <!--            <artifactId>poi-ooxml</artifactId>-->
+        <!--            <version>5.2.3</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.qameta.allure</groupId>-->
+        <!--            <artifactId>allure-commandline</artifactId>-->
+        <!--            <version>2.21.0</version>-->
+        <!--            <type>pom</type>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.aspectj</groupId>-->
+        <!--            <artifactId>aspectjweaver</artifactId>-->
+        <!--            <version>1.9.19</version>-->
+        <!--            <scope>runtime</scope>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.maven.plugins</groupId>-->
+        <!--            <artifactId>maven-source-plugin</artifactId>-->
+        <!--            <version>3.2.1</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.projectlombok</groupId>-->
+        <!--            <artifactId>lombok</artifactId>-->
+        <!--            <version>1.18.26</version>-->
+        <!--            <scope>provided</scope>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.googlecode.json-simple</groupId>-->
+        <!--            <artifactId>json-simple</artifactId>-->
+        <!--            <version>1.1.1</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.cucumber</groupId>-->
+        <!--            <artifactId>cucumber-java</artifactId>-->
+        <!--            <version>${cucumber-version}</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.cucumber</groupId>-->
+        <!--            <artifactId>cucumber-junit</artifactId>-->
+        <!--            <version>${cucumber-version}</version>-->
+        <!--            &lt;!&ndash;            <scope>test</scope>&ndash;&gt;-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.cucumber</groupId>-->
+        <!--            <artifactId>cucumber-picocontainer</artifactId>-->
+        <!--            <version>${cucumber-version}</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>net.masterthought</groupId>-->
+        <!--            <artifactId>cucumber-reporting</artifactId>-->
+        <!--            <version>5.8.4</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>tech.grasshopper</groupId>-->
+        <!--            <artifactId>extentreports-cucumber7-adapter</artifactId>-->
+        <!--            <version>1.14.0</version>-->
+        <!--        </dependency>-->
+        <!--    </dependencies>-->
+        <!--    <build>-->
+        <!--        <plugins>-->
+        <!--            <plugin>-->
+        <!--                <groupId>org.apache.maven.plugins</groupId>-->
+        <!--                <artifactId>maven-compiler-plugin</artifactId>-->
+        <!--                <version>3.12.1</version>-->
+        <!--                <configuration>-->
+        <!--                    <encoding>UTF-8</encoding>-->
+        <!--                    <source>11</source>-->
+        <!--                    <target>11</target>-->
+        <!--                </configuration>-->
+        <!--            </plugin>-->
+        <!--            <plugin>-->
+        <!--                <groupId>org.apache.maven.plugins</groupId>-->
+        <!--                <artifactId>maven-surefire-plugin</artifactId>-->
+        <!--                <version>3.5.3</version>-->
+        <!--                <configuration>-->
+        <!--                    <properties>-->
+        <!--                        <property>-->
+        <!--                            <name>testng</name>-->
+        <!--                            <value>false</value>-->
+        <!--                        </property>-->
+        <!--                    </properties>-->
+        <!--                    <parallel>methods</parallel>-->
+        <!--                    <threadCount>4</threadCount>-->
+        <!--                    <perCoreThreadCount>false</perCoreThreadCount>-->
+        <!--                    <testFailureIgnore>true</testFailureIgnore>-->
+        <!--                    <includes>-->
+        <!--                        <include>runners/testRunner.java</include>-->
+        <!--                    </includes>-->
+        <!--                </configuration>-->
+        <!--                <dependencies>-->
+        <!--                    <dependency>-->
+        <!--                        <groupId>org.apache.maven.surefire</groupId>-->
+        <!--                        <artifactId>surefire-junit47</artifactId>-->
+        <!--                        <version>3.5.3</version>-->
+        <!--                    </dependency>-->
+        <!--                </dependencies>-->
+        <!--            </plugin>-->
+        <!--            <plugin>-->
+        <!--                <groupId>net.masterthought</groupId>-->
+        <!--                <artifactId>maven-cucumber-reporting</artifactId>-->
+        <!--                <version>5.8.4</version>-->
+        <!--                <executions>-->
+        <!--                    <execution>-->
+        <!--                        <id>execution</id>-->
+        <!--                        <phase>test</phase>-->
+        <!--                        <goals>-->
+        <!--                            <goal>generate</goal>-->
+        <!--                        </goals>-->
+        <!--                        <configuration>-->
+        <!--                            <projectName>AutomationExercise</projectName>-->
+        <!--                            <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>-->
+        <!--&lt;!&ndash;                            <inputDirectory>${project.build.directory}/cucumber-reports</inputDirectory>&ndash;&gt;-->
+        <!--                            <jsonFiles>-->
+        <!--                                <param>test-report.json</param>-->
+        <!--                            </jsonFiles>-->
+        <!--                            <buildNumber>New Build</buildNumber>-->
+        <!--                            <checkBuildResult>true</checkBuildResult>-->
+        <!--                        </configuration>-->
+        <!--                    </execution>-->
+        <!--                </executions>-->
+        <!--            </plugin>-->
+        <!--        </plugins>-->
+        <!--    </build>-->
+        <!--    <profiles>-->
+        <!--        <profile>-->
+        <!--            <id>local-profile</id>-->
+        <!--            <activation>-->
+        <!--                <os>-->
+        <!--                    <family>windows</family>-->
+        <!--                </os>-->
+        <!--            </activation>-->
+        <!--            <build>-->
+        <!--                <plugins>-->
+        <!--                    <plugin>-->
+        <!--                        <groupId>com.coderplus.maven.plugins</groupId>-->
+        <!--                        <artifactId>copy-rename-maven-plugin</artifactId>-->
+        <!--                        <version>1.0</version>-->
+        <!--                        <executions>-->
+        <!--                            <execution>-->
+        <!--                                <id>copy-and-rename-file</id>-->
+        <!--                                <phase>validate</phase>-->
+        <!--                                <goals>-->
+        <!--                                    <goal>copy</goal>-->
+        <!--                                </goals>-->
+        <!--                            </execution>-->
+        <!--                        </executions>-->
+        <!--                    </plugin>-->
+        <!--                    <plugin>-->
+        <!--                        <groupId>org.apache.maven.plugins</groupId>-->
+        <!--                        <artifactId>maven-surefire-plugin</artifactId>-->
+        <!--                        <version>3.5.3</version>-->
+        <!--                        <dependencies>-->
+        <!--                            <dependency>-->
+        <!--                                <groupId>org.apache.maven.surefire</groupId>-->
+        <!--                                <artifactId>surefire-junit47</artifactId>-->
+        <!--                                <version>3.5.3</version>-->
+        <!--                            </dependency>-->
+        <!--                        </dependencies>-->
+        <!--                        <configuration>-->
+        <!--                            <parallel>methods</parallel>-->
+        <!--                            <threadCount>10</threadCount>-->
+        <!--                            &lt;!&ndash;                            <skipTests>true</skipTests> &lt;!&ndash; Skip tests during the build &ndash;&gt;&ndash;&gt;-->
+        <!--                        </configuration>-->
+        <!--                    </plugin>-->
+        <!--                </plugins>-->
+        <!--            </build>-->
+        <!--        </profile>-->
+        <!--    </profiles>-->
