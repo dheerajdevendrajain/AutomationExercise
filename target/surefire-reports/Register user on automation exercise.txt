@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: Register user on automation exercise
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.36 s -- in Register user on automation exercise
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.03 s -- in Register user on automation exercise
