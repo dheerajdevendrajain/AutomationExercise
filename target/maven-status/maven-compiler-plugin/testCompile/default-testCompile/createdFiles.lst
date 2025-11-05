@@ -1,3 +1,4 @@
+utilities\LogUtilities.class
 pages\LoginPage.class
 stepDefinitions\LoginPageSteps.class
 pages\HomePage.class
